@@ -23,6 +23,10 @@ public class AppSensors  extends Application {
 
     }
 
+    /**
+     * Inyección del objeto
+     * @param object
+     */
     public void inject(Object object) {
         objectGraph.inject(object);
     }
