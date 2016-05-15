@@ -1,7 +1,6 @@
 package vtcmer.sensors_test.ui.presenter.impl;
 
 import android.app.Activity;
-import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 
@@ -9,17 +8,12 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import rx.Observer;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-import vtcmer.sensors_test.listener.SensorAccelerometerListener;
 import vtcmer.sensors_test.listener.SensorProximityListener;
-import vtcmer.sensors_test.model.SensorAccelerometerData;
 import vtcmer.sensors_test.model.commons.EnumSensorType;
 import vtcmer.sensors_test.model.commons.SensorCoordinates;
-import vtcmer.sensors_test.ui.presenter.AccelerometerPresenter;
 import vtcmer.sensors_test.ui.presenter.ProximityPresenter;
-import vtcmer.sensors_test.ui.view.AccelerometerView;
 import vtcmer.sensors_test.ui.view.ProximimtyView;
 
 /**

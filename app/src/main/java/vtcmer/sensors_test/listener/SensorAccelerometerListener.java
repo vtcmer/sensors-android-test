@@ -3,6 +3,7 @@ package vtcmer.sensors_test.listener;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 
 import javax.inject.Inject;
 
@@ -31,6 +32,12 @@ public class SensorAccelerometerListener extends SensorAbstractListener implemen
     private float curY = 0;
     private float curZ = 0;
 
+
+
+    private static final float SHAKE_THRESHOLD = 1.1f;
+    private static final int SHAKE_WAIT_TIME_MS = 250;
+
+    private long mShakeTime = 0;
 
     private Observer<? super SensorAccelerometerData> sensorObserver;
 
@@ -65,6 +72,36 @@ public class SensorAccelerometerListener extends SensorAbstractListener implemen
     public void onSensorChanged(SensorEvent event) {
 
         synchronized (this) {
+
+
+
+            long now = System.currentTimeMillis();
+
+            if ((now - mShakeTime) > SHAKE_WAIT_TIME_MS) {
+                mShakeTime = now;
+
+                float gX = event.values[0] / SensorManager.GRAVITY_EARTH;
+                float gY = event.values[1] / SensorManager.GRAVITY_EARTH;
+                float gZ = event.values[2] / SensorManager.GRAVITY_EARTH;
+
+                // gForce will be close to 1 when there is no movement
+                double gForce = Math.sqrt(gX * gX + gY * gY + gZ * gZ);
+
+                // Change background color if gForce exceeds threshold;
+                // otherwise, reset the color
+                if (gForce > SHAKE_THRESHOLD) {
+                    //soundAcc.start();
+                    SensorAccelerometerData d = new SensorAccelerometerData();
+                    d.setX(gX);
+                    d.setY(gY);
+                    d.setZ(gZ);
+                    //d.setMovement(movement);
+                    sensorObserver.onNext(d);
+
+                }
+            }
+
+            /*
 
             long current_time = event.timestamp;
 
@@ -105,7 +142,7 @@ public class SensorAccelerometerListener extends SensorAbstractListener implemen
                 last_update = current_time;
             }
 
-
+            */
 
 
 

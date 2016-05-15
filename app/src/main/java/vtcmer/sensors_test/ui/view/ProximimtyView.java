@@ -1,6 +1,5 @@
 package vtcmer.sensors_test.ui.view;
 
-import vtcmer.sensors_test.model.SensorAccelerometerData;
 import vtcmer.sensors_test.model.commons.SensorCoordinates;
 
 /**

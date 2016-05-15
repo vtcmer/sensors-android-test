@@ -1,7 +1,5 @@
 package vtcmer.sensors_test.ui.presenter;
 
-import android.hardware.Sensor;
-
 import vtcmer.sensors_test.model.commons.EnumSensorType;
 import vtcmer.sensors_test.ui.view.MainView;
 

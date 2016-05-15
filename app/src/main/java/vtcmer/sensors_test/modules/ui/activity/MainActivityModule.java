@@ -1,8 +1,5 @@
 package vtcmer.sensors_test.modules.ui.activity;
 
-import android.content.Context;
-
-import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;

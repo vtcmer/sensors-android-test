@@ -1,6 +1,5 @@
 package vtcmer.sensors_test.ui.presenter;
 
-import vtcmer.sensors_test.ui.view.AccelerometerView;
 import vtcmer.sensors_test.ui.view.ProximimtyView;
 
 /**

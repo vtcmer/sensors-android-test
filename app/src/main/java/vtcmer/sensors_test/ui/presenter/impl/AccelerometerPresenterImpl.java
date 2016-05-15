@@ -1,7 +1,6 @@
 package vtcmer.sensors_test.ui.presenter.impl;
 
 import android.app.Activity;
-import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 
@@ -9,7 +8,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import rx.Observer;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import vtcmer.sensors_test.listener.SensorAccelerometerListener;

@@ -1,5 +1,6 @@
 package vtcmer.sensors_test.ui.activity;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -7,27 +8,27 @@ import javax.inject.Inject;
 
 import butterknife.InjectView;
 import vtcmer.sensors_test.R;
-import vtcmer.sensors_test.model.SensorAccelerometerData;
-import vtcmer.sensors_test.ui.presenter.AccelerometerPresenter;
-import vtcmer.sensors_test.ui.view.AccelerometerView;
+import vtcmer.sensors_test.model.commons.SensorCoordinates;
+import vtcmer.sensors_test.ui.presenter.GyroscopePresenter;
+import vtcmer.sensors_test.ui.view.GyroscopeView;
 
-public class GyroscopeActivity extends SensorActivity implements AccelerometerView {
+public class GyroscopeActivity extends SensorActivity implements GyroscopeView {
 
 
     @Inject
-    AccelerometerPresenter presenter;
+    GyroscopePresenter presenter;
 
 
     @InjectView(R.id.maxX)TextView maxX;
     @InjectView(R.id.maxY)TextView maxY;
     @InjectView(R.id.maxZ)TextView maxz;
-    @InjectView(R.id.movement)TextView movement;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_accelerometer);
+        setContentView(R.layout.activity_gyroscope);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         this.initialize();
     }
 
@@ -63,13 +64,12 @@ public class GyroscopeActivity extends SensorActivity implements AccelerometerVi
     }
 
 
+
     @Override
-    public void updateCoordinates(SensorAccelerometerData sensorData) {
+    public void updateCoordiantes(SensorCoordinates coordinates) {
 
-        this.maxX.setText(String.valueOf(sensorData.getX()));
-        this.maxY.setText(String.valueOf(sensorData.getY()));
-        this.maxz.setText(String.valueOf(sensorData.getZ()));
-        this.movement.setText(String.valueOf(sensorData.getMovement()));
-
+        this.maxX.setText(String.valueOf(coordinates.getX()));
+        this.maxY.setText(String.valueOf(coordinates.getY()));
+        this.maxz.setText(String.valueOf(coordinates.getZ()));
     }
 }

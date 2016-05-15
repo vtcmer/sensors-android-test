@@ -7,11 +7,8 @@ import javax.inject.Inject;
 
 import butterknife.InjectView;
 import vtcmer.sensors_test.R;
-import vtcmer.sensors_test.model.SensorAccelerometerData;
 import vtcmer.sensors_test.model.commons.SensorCoordinates;
-import vtcmer.sensors_test.ui.presenter.AccelerometerPresenter;
 import vtcmer.sensors_test.ui.presenter.ProximityPresenter;
-import vtcmer.sensors_test.ui.view.AccelerometerView;
 import vtcmer.sensors_test.ui.view.ProximimtyView;
 
 public class ProximityActivity extends SensorActivity implements ProximimtyView {

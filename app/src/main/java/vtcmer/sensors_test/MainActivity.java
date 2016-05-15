@@ -2,12 +2,10 @@ package vtcmer.sensors_test;
 
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +14,6 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import vtcmer.sensors_test.listener.SensorAccelerometerListener;
 import vtcmer.sensors_test.model.commons.EnumSensorType;
 import vtcmer.sensors_test.modules.ui.activity.MainActivityModule;
 import vtcmer.sensors_test.ui.activity.ApplicationActivity;

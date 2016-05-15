@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.AccelerometerActivity"></activity>
+        <activity android:name=".ui.activity.GyroscopeActivity"></activity>
         <activity android:name=".ui.activity.ProximityActivity"></activity>
     </application>
 

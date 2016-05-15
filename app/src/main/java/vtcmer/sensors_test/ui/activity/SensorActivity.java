@@ -1,13 +1,9 @@
 package vtcmer.sensors_test.ui.activity;
 
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import vtcmer.sensors_test.model.commons.EnumSensorType;
 import vtcmer.sensors_test.modules.ui.activity.SensorActivityModule;
 
 /**

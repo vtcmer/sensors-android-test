@@ -1,10 +1,7 @@
 package vtcmer.sensors_test.ui.presenter.impl;
 
-import android.hardware.Sensor;
-
 import javax.inject.Inject;
 
-import rx.Observer;
 import vtcmer.sensors_test.model.commons.EnumSensorType;
 import vtcmer.sensors_test.ui.activity.Navigator;
 import vtcmer.sensors_test.ui.presenter.MainPresenter;

@@ -26,6 +26,8 @@ public class Navigator {
             redirectToAccelerometerView();
         } else if (sensorType.equals(EnumSensorType.PROXIMITY)){
             redirectToProximityView();
+        } else if (sensorType.equals(EnumSensorType.GYROSCOPE)){
+            redirectToGyroscopeView();
         }
 
 
@@ -34,6 +36,11 @@ public class Navigator {
 
     private void redirectToAccelerometerView(){
         Intent intent = new Intent(this.context, AccelerometerActivity.class);
+        this.startActivity(intent);
+    }
+
+    private void redirectToGyroscopeView(){
+        Intent intent = new Intent(this.context, GyroscopeActivity.class);
         this.startActivity(intent);
     }
 

@@ -1,5 +1,6 @@
 package vtcmer.sensors_test.ui.activity;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -28,6 +29,7 @@ public class AccelerometerActivity  extends SensorActivity implements Accelerome
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accelerometer);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         this.initialize();
     }
 
